@@ -1,1 +1,107 @@
-{"fund_name":"Cluaran Capital Small-Cap REIT Factor Portfolio","ticker":"CLUR","inception_date":"2026-09-01","inception_capital":2000,"benchmark_primary":"KBWY","benchmark_secondary":"VNQ","drift_band":[8.5,16.5],"as_of":"2026-08-25","current_nav":2000.18,"cash":0.0,"dividends_cumulative":0.0,"fund_return_pct":0.0,"primary_return_pct":0.0,"secondary_return_pct":0.0,"holdings":[{"ticker":"APLE","name":"Apple Hospitality REIT","sector":"Hotel","shares":14.98,"cost_basis":16.69,"price":16.69,"value":250.02,"gain_pct":0.0,"weight_pct":12.5},{"ticker":"UE","name":"Urban Edge Properties","sector":"Retail","shares":11.64,"cost_basis":21.48,"price":21.48,"value":250.03,"gain_pct":0.0,"weight_pct":12.5},{"ticker":"GTY","name":"Getty Realty","sector":"Net lease","shares":7.49,"cost_basis":33.39,"price":33.39,"value":250.09,"gain_pct":0.0,"weight_pct":12.5},{"ticker":"CSR","name":"Centerspace","sector":"Residential","shares":4.62,"cost_basis":54.07,"price":54.07,"value":249.8,"gain_pct":0.0,"weight_pct":12.49},{"ticker":"INN","name":"Summit Hotel Properties","sector":"Hotel","shares":40.32,"cost_basis":6.2,"price":6.2,"value":249.98,"gain_pct":0.0,"weight_pct":12.5},{"ticker":"CTO","name":"CTO Realty Growth","sector":"Retail","shares":11.43,"cost_basis":21.87,"price":21.87,"value":249.97,"gain_pct":0.0,"weight_pct":12.5},{"ticker":"EPR","name":"EPR Properties","sector":"Diversified","shares":4.13,"cost_basis":60.6,"price":60.6,"value":250.28,"gain_pct":0.0,"weight_pct":12.51},{"ticker":"PSTL","name":"Postal Realty Trust","sector":"Net lease","shares":10.87,"cost_basis":23.0,"price":23.0,"value":250.01,"gain_pct":0.0,"weight_pct":12.5}],"nav_history":[]}
+{
+  "fund_name": "Cluaran Capital Small-Cap REIT Factor Portfolio",
+  "ticker": "CLUR",
+  "inception_date": "2026-08-25",
+  "inception_capital": 2001.46,
+  "benchmark_primary": "KBWY",
+  "benchmark_secondary": "VNQ",
+  "drift_band": [8.5, 16.5],
+  "as_of": "2026-08-25",
+  "current_nav": 1998.91,
+  "cash": 0.0,
+  "dividends_cumulative": 0.0,
+  "fund_return_pct": -0.13,
+  "primary_return_pct": 0.0,
+  "secondary_return_pct": 0.0,
+  "holdings": [
+    {
+      "ticker": "APLE",
+      "name": "Apple Hospitality REIT",
+      "sector": "Hotel",
+      "shares": 15.0,
+      "cost_basis": 16.645,
+      "price": 16.65,
+      "value": 249.68,
+      "gain_pct": 0.0,
+      "weight_pct": 12.49
+    },
+    {
+      "ticker": "CSR",
+      "name": "Centerspace",
+      "sector": "Residential",
+      "shares": 4.5898,
+      "cost_basis": 54.4391,
+      "price": 54.25,
+      "value": 248.99,
+      "gain_pct": -0.35,
+      "weight_pct": 12.46
+    },
+    {
+      "ticker": "CTO",
+      "name": "CTO Realty Growth",
+      "sector": "Retail",
+      "shares": 11.4311,
+      "cost_basis": 21.90372,
+      "price": 21.89,
+      "value": 250.23,
+      "gain_pct": -0.06,
+      "weight_pct": 12.52
+    },
+    {
+      "ticker": "EPR",
+      "name": "EPR Properties",
+      "sector": "Diversified",
+      "shares": 4.1098,
+      "cost_basis": 60.91205,
+      "price": 60.76,
+      "value": 249.71,
+      "gain_pct": -0.25,
+      "weight_pct": 12.49
+    },
+    {
+      "ticker": "GTY",
+      "name": "Getty Realty",
+      "sector": "Net lease",
+      "shares": 7.4811,
+      "cost_basis": 33.46446,
+      "price": 33.4,
+      "value": 249.87,
+      "gain_pct": -0.19,
+      "weight_pct": 12.5
+    },
+    {
+      "ticker": "INN",
+      "name": "Summit Hotel Properties",
+      "sector": "Hotel",
+      "shares": 40.6509,
+      "cost_basis": 6.15874,
+      "price": 6.169,
+      "value": 250.78,
+      "gain_pct": 0.17,
+      "weight_pct": 12.55
+    },
+    {
+      "ticker": "PSTL",
+      "name": "Postal Realty Trust",
+      "sector": "Net lease",
+      "shares": 10.7772,
+      "cost_basis": 23.20921,
+      "price": 23.165,
+      "value": 249.65,
+      "gain_pct": -0.19,
+      "weight_pct": 12.49
+    },
+    {
+      "ticker": "UE",
+      "name": "Urban Edge Properties",
+      "sector": "Retail",
+      "shares": 11.6225,
+      "cost_basis": 21.54034,
+      "price": 21.51,
+      "value": 250.0,
+      "gain_pct": -0.14,
+      "weight_pct": 12.51
+    }
+  ],
+  "nav_history": []
+}
