@@ -1,1 +1,218 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CLUR - Cluaran Capital Small-Cap REIT Factor Portfolio</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#f7f8fa;margin:0;padding:24px;color:#1a1a1a}.wrap{max-width:1040px;margin:0 auto}h1{color:#1f3864;font-size:25px;margin:0 0 4px}.sub{color:#595959;font-size:13.5px}.note{background:#eef3fa;border:1px solid #cfdcee;border-radius:8px;padding:10px 14px;font-size:12.5px;color:#28405e;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px;margin:20px 0}.card{background:#fff;border:1px solid #e3e6ea;border-radius:10px;padding:15px}.lbl{font-size:11.5px;color:#595959;text-transform:uppercase}.val{font-size:22px;font-weight:700;color:#1f3864;margin-top:4px}table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #e3e6ea}th{color:#595959;font-size:11.5px;text-transform:uppercase}.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;background:#edf1f8;color:#1f3864;font-weight:600}footer{color:#595959;font-size:11.5px;margin-top:28px;text-align:center}</style></head><body><div class="wrap"><h1 id="fname">CLUR</h1><div class="sub" id="fsub">Loading...</div><div class="note">Self-managed model portfolio tracked for research purposes. Not a listed security, not offered for sale, and not investment advice.</div><div class="grid" id="stats"></div><div class="card"><h3 style="color:#1f3864;margin-top:0;font-size:16px">Holdings</h3><table><thead><tr><th>Ticker</th><th>Sector</th><th>Weight</th><th>Price</th><th>Value</th></tr></thead><tbody id="tbody"></tbody></table></div><footer>Equal-weight, 8 holdings. Deep review May and November.</footer></div><script>fetch('data.json?_='+Date.now()).then(function(r){return r.json()}).then(function(d){document.getElementById('fname').textContent=d.ticker+' - '+d.fund_name;document.getElementById('fsub').textContent='Inception '+d.inception_date+' | $'+d.inception_capital.toLocaleString()+' | vs '+d.benchmark_primary+' and '+d.benchmark_secondary+' | as of '+d.as_of;var s=[['NAV','$'+d.current_nav.toLocaleString()],['Return since inception',d.fund_return_pct.toFixed(2)+'%'],['vs '+d.benchmark_primary,(d.fund_return_pct-d.primary_return_pct).toFixed(2)+'%'],['vs '+d.benchmark_secondary,(d.fund_return_pct-d.secondary_return_pct).toFixed(2)+'%'],['Dividends','$'+d.dividends_cumulative.toFixed(2)],['Cash','$'+d.cash.toFixed(2)]];document.getElementById('stats').innerHTML=s.map(function(x){return '<div class="card"><div class="lbl">'+x[0]+'</div><div class="val">'+x[1]+'</div></div>'}).join('');document.getElementById('tbody').innerHTML=d.holdings.map(function(h){return '<tr><td><strong>'+h.ticker+'</strong><br><span style="color:#595959;font-size:11.5px">'+h.name+'</span></td><td><span class="pill">'+h.sector+'</span></td><td>'+h.weight_pct+'%</td><td>$'+h.price.toFixed(2)+'</td><td>$'+h.value.toFixed(2)+'</td></tr>'}).join('')});</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLUR - Cluaran Capital Small-Cap REIT Factor Portfolio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root { --navy:#1f3864; --grey:#5b6470; --green:#1b7a34; --red:#b3261e;
+          --bg:#f6f7f9; --card:#fff; --border:#e2e6eb; }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);margin:0;padding:24px;color:#16191d}
+  .wrap{max-width:1060px;margin:0 auto}
+  h1{color:var(--navy);font-size:25px;margin:0 0 4px}
+  .sub{color:var(--grey);font-size:13.5px}
+  .note{background:#eef3fa;border:1px solid #cfdcee;border-radius:8px;padding:10px 14px;
+        font-size:12.5px;color:#28405e;margin:16px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:15px}
+  .lbl{font-size:11.5px;color:var(--grey);text-transform:uppercase;letter-spacing:.03em}
+  .val{font-size:22px;font-weight:700;color:var(--navy);margin-top:4px}
+  .val.pos{color:var(--green)} .val.neg{color:var(--red)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:right;padding:9px 11px;border-bottom:1px solid var(--border)}
+  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+  th{color:var(--grey);font-size:11.5px;text-transform:uppercase;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;
+        background:#edf1f8;color:var(--navy);font-weight:600}
+  .pos{color:var(--green)} .neg{color:var(--red)}
+  .drift{font-size:10.5px;color:var(--red);font-weight:700;margin-left:4px}
+  .muted{color:var(--grey);font-size:11.5px}
+  footer{color:var(--grey);font-size:11.5px;margin-top:28px;text-align:center}
+  #err{display:none;color:var(--red);padding:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="fname">CLUR</h1>
+  <div class="sub" id="fsub">Loading...</div>
+
+  <div class="note">
+    Self-managed model portfolio tracked for research purposes. Held inside a personal
+    brokerage account. Not a listed security, not offered for sale, and not investment advice.
+  </div>
+
+  <div id="err">No data yet - the first pipeline run has not completed.</div>
+  <div class="grid" id="stats"></div>
+
+  <div class="card" style="padding:20px;margin-bottom:20px">
+    <canvas id="chart" height="105"></canvas>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--navy);margin-top:0;font-size:16px">Holdings</h3>
+    <table>
+      <thead><tr>
+        <th>Ticker</th><th>Sector</th><th>Weight</th>
+        <th>Buy price</th><th>Last</th><th>Change</th><th>Value</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <footer>
+    Updates automatically on trading days via GitHub Actions &middot;
+    Equal-weight, 8 holdings &middot; Deep review May &amp; November
+  </footer>
+</div>
+
+<script>
+const pct = x => (x >= 0 ? '+' : '') + x.toFixed(2) + '%';
+const money = x => '$' + x.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+async function load() {
+  try {
+    const r = await fetch('data.json?_=' + Date.now());
+    if (!r.ok) throw 0;
+    render(await r.json());
+  } catch (e) {
+    document.getElementById('err').style.display = 'block';
+  }
+}
+
+function render(d) {
+  document.getElementById('fname').textContent = d.ticker + ' - ' + d.fund_name;
+  document.getElementById('fsub').textContent =
+    'Inception ' + d.inception_date + ' | ' + money(d.inception_capital) +
+    ' | vs ' + d.benchmark_primary + ' (selection) and ' + d.benchmark_secondary +
+    ' (style) | as of ' + d.as_of;
+
+  const vsP = d.fund_return_pct - d.primary_return_pct;
+  const vsS = d.fund_return_pct - d.secondary_return_pct;
+  const stats = [
+    ['NAV', money(d.current_nav), ''],
+    ['Return since inception', pct(d.fund_return_pct), d.fund_return_pct >= 0 ? 'pos' : 'neg'],
+    ['vs ' + d.benchmark_primary, pct(vsP), vsP >= 0 ? 'pos' : 'neg'],
+    ['vs ' + d.benchmark_secondary, pct(vsS), vsS >= 0 ? 'pos' : 'neg'],
+    ['Dividends received', money(d.dividends_cumulative), 'pos'],
+    ['Cash', money(d.cash), '']
+  ];
+  document.getElementById('stats').innerHTML = stats.map(s =>
+    '<div class="card"><div class="lbl">' + s[0] + '</div>' +
+    '<div class="val ' + s[2] + '">' + s[1] + '</div></div>').join('');
+
+  const lo = d.drift_band[0], hi = d.drift_band[1];
+  document.getElementById('tbody').innerHTML = d.holdings.map(h => {
+    const out = (h.weight_pct < lo || h.weight_pct > hi);
+    const cls = h.gain_pct >= 0 ? 'pos' : 'neg';
+    return '<tr>' +
+      '<td><strong>' + h.ticker + '</strong><br><span class="muted">' + h.name + '</span></td>' +
+      '<td><span class="pill">' + h.sector + '</span></td>' +
+      '<td>' + h.weight_pct.toFixed(2) + '%' + (out ? '<span class="drift">DRIFT</span>' : '') + '</td>' +
+      '<td class="muted">$' + h.cost_basis.toFixed(2) + '</td>' +
+      '<td>$' + h.price.toFixed(2) + '</td>' +
+      '<td class="' + cls + '">' + pct(h.gain_pct) + '</td>' +
+      '<td>' + money(h.value) + '</td>' +
+      '</tr>';
+  }).join('');
+
+  drawChart(d);
+}
+
+function drawChart(d) {
+  const start = new Date(d.inception_date + 'T00:00:00Z');
+  const DAY = 86400000;
+  const dayOf = ds => Math.round((new Date(ds + 'T00:00:00Z') - start) / DAY);
+  const series = key => d.nav_history.map(r => ({
+    x: dayOf(r.date),
+    y: 100 * (1 + (parseFloat(r[key]) || 0) / 100)
+  }));
+
+  const ticks = [];
+  for (let i = 0; i <= 12; i++) {
+    const dt = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth() + i, 1));
+    const off = Math.round((dt - start) / DAY);
+    if (off >= 0 && off <= 365) ticks.push(off);
+  }
+  const labelFor = v => {
+    const dt = new Date(start.getTime() + v * DAY);
+    const m = dt.toLocaleDateString('en-US', {month: 'short', timeZone: 'UTC'});
+    return dt.getUTCMonth() === 0 ? m + " '" + String(dt.getUTCFullYear()).slice(2) : m;
+  };
+
+  const line = (label, key, color, dash) => ({
+    label: label,
+    data: series(key),
+    borderColor: color,
+    backgroundColor: color,
+    borderWidth: 2,
+    borderDash: dash,
+    fill: false,
+    tension: 0.15,
+    pointRadius: 3,
+    pointHoverRadius: 5
+  });
+
+  new Chart(document.getElementById('chart'), {
+    type: 'line',
+    data: {
+      datasets: [
+        line(d.ticker, 'fund_return_pct', '#1f3864', []),
+        line(d.benchmark_primary, 'kbwy_return_pct', '#c0873a', [6, 3]),
+        line(d.benchmark_secondary, 'vnq_return_pct', '#8a8f98', [3, 3]),
+        {
+          label: 'Baseline',
+          data: [{x: 0, y: 100}, {x: 365, y: 100}],
+          borderColor: '#c9ced6',
+          borderWidth: 1,
+          borderDash: [2, 4],
+          pointRadius: 0,
+          fill: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: {mode: 'nearest', intersect: false},
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: {filter: it => it.text !== 'Baseline', usePointStyle: true, boxWidth: 8}
+        },
+        title: {display: true, text: 'Growth of 100 since inception'},
+        tooltip: {
+          callbacks: {
+            title: items => {
+              const dt = new Date(start.getTime() + items[0].parsed.x * DAY);
+              return dt.toISOString().slice(0, 10);
+            },
+            label: c => c.dataset.label + ': ' + c.parsed.y.toFixed(2) +
+                        '  (' + (c.parsed.y >= 100 ? '+' : '') + (c.parsed.y - 100).toFixed(2) + '%)'
+          }
+        }
+      },
+      scales: {
+        x: {
+          type: 'linear',
+          min: 0,
+          max: 365,
+          afterBuildTicks: axis => { axis.ticks = ticks.map(v => ({value: v})); },
+          ticks: {callback: labelFor, autoSkip: false, maxRotation: 0},
+          grid: {color: '#eef0f3'}
+        },
+        y: {
+          ticks: {callback: v => v.toFixed(0)},
+          grid: {color: '#eef0f3'}
+        }
+      }
+    }
+  });
+}
+
+load();
+</script>
+</body>
+</html>
