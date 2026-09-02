@@ -9,13 +9,13 @@
     8.5,
     16.5
   ],
-  "as_of": "2026-09-01",
-  "current_nav": 1942.84,
+  "as_of": "2026-09-02",
+  "current_nav": 1951.19,
   "cash": 0.0,
   "dividends_cumulative": 0.0,
-  "fund_return_pct": -2.93,
-  "primary_return_pct": -3.21,
-  "secondary_return_pct": -2.97,
+  "fund_return_pct": -2.51,
+  "primary_return_pct": -2.6,
+  "secondary_return_pct": -3.5,
   "holdings": [
     {
       "ticker": "APLE",
@@ -23,10 +23,10 @@
       "sector": "Hotel",
       "shares": 15.0,
       "cost_basis": 16.645,
-      "price": 15.57,
-      "value": 233.55,
-      "gain_pct": -6.46,
-      "weight_pct": 12.02
+      "price": 15.75,
+      "value": 236.25,
+      "gain_pct": -5.38,
+      "weight_pct": 12.11
     },
     {
       "ticker": "CSR",
@@ -34,10 +34,10 @@
       "sector": "Residential",
       "shares": 4.5898,
       "cost_basis": 54.4391,
-      "price": 52.39,
-      "value": 240.46,
-      "gain_pct": -3.76,
-      "weight_pct": 12.38
+      "price": 52.78,
+      "value": 242.25,
+      "gain_pct": -3.05,
+      "weight_pct": 12.42
     },
     {
       "ticker": "CTO",
@@ -45,10 +45,10 @@
       "sector": "Retail",
       "shares": 11.4311,
       "cost_basis": 21.90372,
-      "price": 21.5,
-      "value": 245.77,
-      "gain_pct": -1.84,
-      "weight_pct": 12.65
+      "price": 21.43,
+      "value": 244.97,
+      "gain_pct": -2.16,
+      "weight_pct": 12.55
     },
     {
       "ticker": "EPR",
@@ -56,9 +56,9 @@
       "sector": "Diversified",
       "shares": 4.1098,
       "cost_basis": 60.91205,
-      "price": 59.36,
-      "value": 243.96,
-      "gain_pct": -2.55,
+      "price": 59.61,
+      "value": 244.99,
+      "gain_pct": -2.14,
       "weight_pct": 12.56
     },
     {
@@ -67,10 +67,10 @@
       "sector": "Net lease",
       "shares": 7.4811,
       "cost_basis": 33.46446,
-      "price": 32.38,
-      "value": 242.24,
-      "gain_pct": -3.24,
-      "weight_pct": 12.47
+      "price": 32.49,
+      "value": 243.06,
+      "gain_pct": -2.91,
+      "weight_pct": 12.46
     },
     {
       "ticker": "INN",
@@ -78,10 +78,10 @@
       "sector": "Hotel",
       "shares": 40.6509,
       "cost_basis": 6.15874,
-      "price": 5.72,
-      "value": 232.52,
-      "gain_pct": -7.12,
-      "weight_pct": 11.97
+      "price": 5.78,
+      "value": 234.96,
+      "gain_pct": -6.15,
+      "weight_pct": 12.04
     },
     {
       "ticker": "PSTL",
@@ -89,9 +89,9 @@
       "sector": "Net lease",
       "shares": 10.7772,
       "cost_basis": 23.20921,
-      "price": 23.74,
-      "value": 255.85,
-      "gain_pct": 2.29,
+      "price": 23.85,
+      "value": 257.04,
+      "gain_pct": 2.76,
       "weight_pct": 13.17
     },
     {
@@ -100,10 +100,10 @@
       "sector": "Retail",
       "shares": 11.6225,
       "cost_basis": 21.54034,
-      "price": 21.38,
-      "value": 248.49,
-      "gain_pct": -0.74,
-      "weight_pct": 12.79
+      "price": 21.31,
+      "value": 247.68,
+      "gain_pct": -1.07,
+      "weight_pct": 12.69
     }
   ],
   "nav_history": [
@@ -159,12 +159,22 @@
     },
     {
       "date": "2026-09-01",
-      "fund_nav": 1942.84,
-      "fund_return_pct": -2.93,
-      "kbwy_price": 17.81,
-      "kbwy_return_pct": -3.21,
-      "vnq_price": 96.3,
-      "vnq_return_pct": -2.97,
+      "fund_nav": "1942.84",
+      "fund_return_pct": "-2.93",
+      "kbwy_price": "17.81",
+      "kbwy_return_pct": "-3.21",
+      "vnq_price": "96.3",
+      "vnq_return_pct": "-2.97",
+      "dividends_cumulative": "0.0"
+    },
+    {
+      "date": "2026-09-02",
+      "fund_nav": 1951.19,
+      "fund_return_pct": -2.51,
+      "kbwy_price": 17.92,
+      "kbwy_return_pct": -2.6,
+      "vnq_price": 95.78,
+      "vnq_return_pct": -3.5,
       "dividends_cumulative": 0.0
     }
   ]
