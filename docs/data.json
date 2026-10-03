@@ -9,7 +9,7 @@
     8.5,
     16.5
   ],
-  "as_of": "2026-10-01",
+  "as_of": "2026-10-02",
   "current_nav": NaN,
   "cash": 0.0,
   "dividends_cumulative": 0.0,
@@ -369,6 +369,16 @@
     },
     {
       "date": "2026-10-01",
+      "fund_nav": "nan",
+      "fund_return_pct": "nan",
+      "kbwy_price": "nan",
+      "kbwy_return_pct": "nan",
+      "vnq_price": "nan",
+      "vnq_return_pct": "nan",
+      "dividends_cumulative": "0.0"
+    },
+    {
+      "date": "2026-10-02",
       "fund_nav": NaN,
       "fund_return_pct": NaN,
       "kbwy_price": NaN,
