@@ -9,13 +9,13 @@
     8.5,
     16.5
   ],
-  "as_of": "2026-10-06",
+  "as_of": "2026-10-07",
   "current_nav": NaN,
   "cash": 0.0,
   "dividends_cumulative": 0.0,
   "fund_return_pct": NaN,
-  "primary_return_pct": -10.54,
-  "secondary_return_pct": -9.39,
+  "primary_return_pct": NaN,
+  "secondary_return_pct": NaN,
   "holdings": [
     {
       "ticker": "APLE",
@@ -34,9 +34,9 @@
       "sector": "Residential",
       "shares": 4.5898,
       "cost_basis": 54.4391,
-      "price": 55.45,
-      "value": 254.5,
-      "gain_pct": 1.86,
+      "price": NaN,
+      "value": NaN,
+      "gain_pct": NaN,
       "weight_pct": NaN
     },
     {
@@ -45,9 +45,9 @@
       "sector": "Retail",
       "shares": 11.4311,
       "cost_basis": 21.90372,
-      "price": 20.53,
-      "value": 234.68,
-      "gain_pct": -6.27,
+      "price": NaN,
+      "value": NaN,
+      "gain_pct": NaN,
       "weight_pct": NaN
     },
     {
@@ -56,9 +56,9 @@
       "sector": "Diversified",
       "shares": 4.1098,
       "cost_basis": 60.91205,
-      "price": 55.27,
-      "value": 227.15,
-      "gain_pct": -9.26,
+      "price": NaN,
+      "value": NaN,
+      "gain_pct": NaN,
       "weight_pct": NaN
     },
     {
@@ -67,9 +67,9 @@
       "sector": "Net lease",
       "shares": 7.4811,
       "cost_basis": 33.46446,
-      "price": 27.89,
-      "value": 208.65,
-      "gain_pct": -16.66,
+      "price": NaN,
+      "value": NaN,
+      "gain_pct": NaN,
       "weight_pct": NaN
     },
     {
@@ -78,9 +78,9 @@
       "sector": "Hotel",
       "shares": 40.6509,
       "cost_basis": 6.15874,
-      "price": 5.99,
-      "value": 243.5,
-      "gain_pct": -2.74,
+      "price": NaN,
+      "value": NaN,
+      "gain_pct": NaN,
       "weight_pct": NaN
     },
     {
@@ -399,12 +399,22 @@
     },
     {
       "date": "2026-10-06",
+      "fund_nav": "nan",
+      "fund_return_pct": "nan",
+      "kbwy_price": "16.46",
+      "kbwy_return_pct": "-10.54",
+      "vnq_price": "89.93",
+      "vnq_return_pct": "-9.39",
+      "dividends_cumulative": "0.0"
+    },
+    {
+      "date": "2026-10-07",
       "fund_nav": NaN,
       "fund_return_pct": NaN,
-      "kbwy_price": 16.46,
-      "kbwy_return_pct": -10.54,
-      "vnq_price": 89.93,
-      "vnq_return_pct": -9.39,
+      "kbwy_price": NaN,
+      "kbwy_return_pct": NaN,
+      "vnq_price": NaN,
+      "vnq_return_pct": NaN,
       "dividends_cumulative": 0.0
     }
   ]
