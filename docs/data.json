@@ -9,13 +9,13 @@
     8.5,
     16.5
   ],
-  "as_of": "2026-10-19",
-  "current_nav": NaN,
+  "as_of": "2026-10-20",
+  "current_nav": 1935.9,
   "cash": 0.0,
   "dividends_cumulative": 0.0,
-  "fund_return_pct": NaN,
-  "primary_return_pct": NaN,
-  "secondary_return_pct": NaN,
+  "fund_return_pct": -3.28,
+  "primary_return_pct": -11.8,
+  "secondary_return_pct": -7.02,
   "holdings": [
     {
       "ticker": "APLE",
@@ -23,10 +23,10 @@
       "sector": "Hotel",
       "shares": 15.0,
       "cost_basis": 16.645,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 17.82,
+      "value": 267.3,
+      "gain_pct": 7.06,
+      "weight_pct": 13.81
     },
     {
       "ticker": "CSR",
@@ -34,10 +34,10 @@
       "sector": "Residential",
       "shares": 4.5898,
       "cost_basis": 54.4391,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 56.12,
+      "value": 257.58,
+      "gain_pct": 3.09,
+      "weight_pct": 13.31
     },
     {
       "ticker": "CTO",
@@ -45,10 +45,10 @@
       "sector": "Retail",
       "shares": 11.4311,
       "cost_basis": 21.90372,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 20.27,
+      "value": 231.71,
+      "gain_pct": -7.46,
+      "weight_pct": 11.97
     },
     {
       "ticker": "EPR",
@@ -56,10 +56,10 @@
       "sector": "Diversified",
       "shares": 4.1098,
       "cost_basis": 60.91205,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 55.37,
+      "value": 227.56,
+      "gain_pct": -9.1,
+      "weight_pct": 11.75
     },
     {
       "ticker": "GTY",
@@ -67,10 +67,10 @@
       "sector": "Net lease",
       "shares": 7.4811,
       "cost_basis": 33.46446,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 28.04,
+      "value": 209.77,
+      "gain_pct": -16.21,
+      "weight_pct": 10.84
     },
     {
       "ticker": "INN",
@@ -78,10 +78,10 @@
       "sector": "Hotel",
       "shares": 40.6509,
       "cost_basis": 6.15874,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 6.94,
+      "value": 282.12,
+      "gain_pct": 12.69,
+      "weight_pct": 14.57
     },
     {
       "ticker": "PSTL",
@@ -89,10 +89,10 @@
       "sector": "Net lease",
       "shares": 10.7772,
       "cost_basis": 23.20921,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 21.63,
+      "value": 233.11,
+      "gain_pct": -6.8,
+      "weight_pct": 12.04
     },
     {
       "ticker": "UE",
@@ -100,10 +100,10 @@
       "sector": "Retail",
       "shares": 11.6225,
       "cost_basis": 21.54034,
-      "price": NaN,
-      "value": NaN,
-      "gain_pct": NaN,
-      "weight_pct": NaN
+      "price": 19.51,
+      "value": 226.75,
+      "gain_pct": -9.43,
+      "weight_pct": 11.71
     }
   ],
   "nav_history": [
@@ -489,12 +489,22 @@
     },
     {
       "date": "2026-10-19",
-      "fund_nav": NaN,
-      "fund_return_pct": NaN,
-      "kbwy_price": NaN,
-      "kbwy_return_pct": NaN,
-      "vnq_price": NaN,
-      "vnq_return_pct": NaN,
+      "fund_nav": "nan",
+      "fund_return_pct": "nan",
+      "kbwy_price": "nan",
+      "kbwy_return_pct": "nan",
+      "vnq_price": "nan",
+      "vnq_return_pct": "nan",
+      "dividends_cumulative": "0.0"
+    },
+    {
+      "date": "2026-10-20",
+      "fund_nav": 1935.9,
+      "fund_return_pct": -3.28,
+      "kbwy_price": 16.23,
+      "kbwy_return_pct": -11.8,
+      "vnq_price": 92.28,
+      "vnq_return_pct": -7.02,
       "dividends_cumulative": 0.0
     }
   ]
